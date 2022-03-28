@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        
+    <!-- Подключение jQuery плагина Masked Input -->
+    <script src="srs/js/jquery.maskedinput.min.js"></script>
+    <!-- myscripts  -->
+    <script src="/srs/js/scripts.js"></script>
+    
+    <!-- Main style-->
+    <link rel="stylesheet" href="srs/css/style.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <title>Настройки</title>
+</head>
+<body>
+    <!-- HeaderMenu -->
+    <nav class="navbar navbar-fixed-top navbar-default" >
+        <div class="container-fluid">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#header-menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Кино</a>                
+            </div>
+            <div class="collapse navbar-collapse" id="header-menu">
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="#">Главная</a></li>
+                    <li class=""><a href="#">Расписание</a></li>
+                    <li class=""><a href="#">О нас</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a id="login"><i class="bi bi-person"></i>Вход</a></li>
+                    <li><a id="registration"><i class="bi bi-person-plus"></i>Регистрация</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> 
+    <!-- MainContent -->
+    <div class="container-fluid">
+        <div class="container-profile">
+            <div class="container-settings">
+                <ul>
+                    <li>                        
+                        <a onclick="openItem('history-order')">                            
+                            <i class="bi bi-card-list"></i>
+                            История заказов
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="openItem('settings')">                            
+                            <i class="bi bi-gear"></i>
+                            Настройки
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-box-arrow-left"></i>
+                            Выход
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container-info-profile">
+                <div class="settings" id="settings">
+                    <h2>Настройки</h2>
+                    <div class="setting-items">
+                        <div class="setting-item">
+                            <div class="setting-line" id="setting-line-email">
+                                <h5>Электронная почта</h5>
+                                <div class="info">
+                                    ziniakov.efim@gmail.com
+                                </div> 
+                                <a id="button-open-email" onclick="openForm('email')">Изменить</a>
+                            </div>
+                            <form action="" class="form-change" id="form-change-email">
+                                <div>                                     
+                                    <span>Новая почта</span>
+                                    <input type="email" pattern="\S+@[a-z]+.[a-z]+" required>
+                                </div>
+                                <div class="button-form">
+                                    <a>Сохранить</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-line" id="setting-line-password">
+                                <h5>Пароль</h5>
+                                <div class="info">
+                                </div> 
+                                <a id="button-open-password" onclick="openForm('password')">Изменить</a>
+                            </div>
+                            <form action="" class="form-change" id="form-change-password">
+                                <div>                                     
+                                    <span>Новый пароль</span>
+                                    <input type="password" required>
+                                </div>
+                                <div style="margin-top:20px;">                                     
+                                    <span>Подтвердить новый пароль</span>
+                                    <input type="password" required>
+                                </div>
+                                <div class="button-form">
+                                    <a>Сохранить</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-line" id="setting-line-tel">
+                                <h5>Телефон</h5>
+                                <div class="info">
+                                    +70230123978
+                                </div> 
+                                <a id="button-open-tel" onclick="openForm('tel')">Изменить</a>
+                            </div>
+                            <form action="" class="form-change" id="form-change-tel">
+                                <div>                                     
+                                    <span>Новый телефон</span>
+                                    <input type="tel" id="phone" title="Введите правильный номер телефона" required>
+                                </div>
+                                <div class="button-form">
+                                    <a>Сохранить</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="history-order table-responsive active" id="history-order">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Название фильма</th>
+                                <th>Место</th>
+                                <th>Дата</th>
+                                <th>Цена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <p>1 ряд 10 место</p>
+                                    <p>2 ряд 10 место</p>
+                                </td>
+                                <td>Иванов</td>
+                                <td>ivanov@mail.ru</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <p>1 ряд 10 место</p>
+                                    <p>2 ряд 10 место</p>
+                                </td>
+                                <td>Иванов</td>
+                                <td>ivanov@mail.ru</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <footer> 
+    </footer>   
+    
+   </body>
+</html>

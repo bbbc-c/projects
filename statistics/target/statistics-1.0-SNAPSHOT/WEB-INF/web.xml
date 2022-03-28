@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>StatisticsAllClients</servlet-name>
+        <servlet-class>com.example.statistics.servlets.StatisticsAllClientsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatisticsAllClients</servlet-name>
+        <url-pattern>/statisticsAllClients</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>StatisticsSelfClient</servlet-name>
+        <servlet-class>com.example.statistics.servlets.StatisticsSelfClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatisticsSelfClient</servlet-name>
+        <url-pattern>/statisticsClient</url-pattern>
+    </servlet-mapping>
+    <filter>
+        <filter-name>StatisticsAllClients</filter-name>
+        <filter-class>com.example.statistics.filters.StatisticsAllClientsFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>StatisticsAllClients</filter-name>
+        <url-pattern>/statisticsAllClients</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>StatisticsClient</filter-name>
+        <filter-class>com.example.statistics.filters.StatistitcsClientFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>StatisticsClient</filter-name>
+        <url-pattern>/statisticsClient</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>IndexFilter</filter-name>
+        <filter-class>com.example.statistics.filters.IndexFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>IndexFilter</filter-name>
+        <url-pattern>/index.jsp</url-pattern>
+    </filter-mapping>
+
+</web-app>
